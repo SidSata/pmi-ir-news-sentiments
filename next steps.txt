@@ -1,0 +1,27 @@
+1. Preprocess and tokenize data
+2. Look into Wordnet dynamic dictionary with sentiments for words
+3. Altavista alternate- proximity search on each phrase- find number of hits where they occur close together- close defined as within ten words - google proximity search
+4. Go off Comet2019 paper file:///C:/Users/siddh/Downloads/Paper94_iCoMET2019.pdf
+5. END GOAL: Classify sections/keywords with sentiments - politics, sport- 
+
+In our application, word probabilities, P(x) and
+P(y), are estimated by counting the number of
+observations of x and y in a corpus, f(x) and f(y),
+and normalizing by N, the size of the corpus. (Our
+examples use a number of different corpora with
+different sizes: 15 million words for the 1987 AP
+
+
+Alternate plan (#1 as of now- try to implement other if possible - running into issues with scraping number of hits)
+1. Preprocess and tokenize data
+2. Calculate TF-IDF of words in article- headline, abstract, first paragraph
+3. Assign numerical value by comparing to negative/positive words dataset
+4. Sum numerical values weighted by TF-IDF to gain overall sentiment of article
+5. Compare keywords to article and assign values of sentiments to them
+6. Visualize most popular keywords and sentiments attached to them- wordcloud- spread of 
+
+
+**If mapping word not found in words_and_scores- initiliaze it after loop with sentiment value of article
+** Ensure that one article does not make corona positive- after each loop through mapping, create another loop that compares article sentiment to sentiment of mapping words- if difference in sentiments is more than 0.5/0.6- update value in words_and_scores by 20% of article sentiment- i.e. negative value gains 20% of positive article value
+
+Use stemmer? Yes- we can regain wordcloud words at the end by comparing them to stemmer and seeing if they match
